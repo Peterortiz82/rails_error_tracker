@@ -1,0 +1,2 @@
+module CommonErrorsHelper
+end

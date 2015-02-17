@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Error msg:</strong>
+  <%= @common_error.error_msg %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @common_error.description %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @common_error.date %>
+</p>
+
+<p>
+  <strong>Resolvedd:</strong>
+  <%= @common_error.resolvedd %>
+</p>
+
+<%= link_to 'Edit', edit_common_error_path(@common_error) %> |
+<%= link_to 'Back', common_errors_path %>
