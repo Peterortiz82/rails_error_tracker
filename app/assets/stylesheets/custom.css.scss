@@ -1,0 +1,27 @@
+@import "bootstrap";
+
+.navbar-inverse {
+  background-color: #981a21;
+  border-color: #981A21;
+  border-radius: 0px;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #FFFFFF;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+color: #FFFFFF;
+}
+
+
+
+a.navbar-brand:hover  {
+  opacity: .8;
+}
+
+.navbar-nav > li > a:hover  {
+  opacity: .8;
+}
+
+
