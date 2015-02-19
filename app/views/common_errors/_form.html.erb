@@ -11,23 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :error_msg %><br>
-    <%= f.text_field :error_msg %>
+    <%= f.text_field :error_msg, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.date_select :date %>
+  
+  <div class="form-group">
+    <%= f.label 'Upload a screenshot' %>
+    <%= f.file_field :image %>
   </div>
-  <div class="field">
-    <%= f.label :resolvedd %><br>
-    <%= f.check_box :resolvedd %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="actions", class: "btn btn-primary">
+    <%= f.submit 'Submit' %>
   </div>
 <% end %>

@@ -1,28 +1,27 @@
 class CommonErrorsController < ApplicationController
   before_action :set_common_error, only: [:show, :edit, :update, :destroy]
 
-  # GET /common_errors
-  # GET /common_errors.json
+  
+  
   def index
-    @common_errors = CommonError.all
+    @common_errors = CommonError.all.order("created_at DESC")
   end
 
-  # GET /common_errors/1
-  # GET /common_errors/1.json
+ 
   def show
   end
 
-  # GET /common_errors/new
+ 
   def new
     @common_error = CommonError.new
   end
 
-  # GET /common_errors/1/edit
+  
   def edit
   end
 
-  # POST /common_errors
-  # POST /common_errors.json
+  
+  
   def create
     @common_error = CommonError.new(common_error_params)
 
@@ -37,8 +36,8 @@ class CommonErrorsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /common_errors/1
-  # PATCH/PUT /common_errors/1.json
+  
+  
   def update
     respond_to do |format|
       if @common_error.update(common_error_params)
@@ -51,8 +50,8 @@ class CommonErrorsController < ApplicationController
     end
   end
 
-  # DELETE /common_errors/1
-  # DELETE /common_errors/1.json
+  
+  
   def destroy
     @common_error.destroy
     respond_to do |format|
@@ -62,13 +61,13 @@ class CommonErrorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+  
     def set_common_error
       @common_error = CommonError.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+  
     def common_error_params
-      params.require(:common_error).permit(:error_msg, :description, :date, :resolvedd)
+      params.require(:common_error).permit(:image, :error_msg, :description, :date, :resolved)
     end
 end

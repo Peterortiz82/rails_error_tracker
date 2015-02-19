@@ -1,24 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+  <div class="panel-heading"><h1><%= @common_error.error_msg %></h1></div>
+  <div class="panel-body">
+    <%= image_tag @common_error.image.url(:medium) %>
+  </div>
 
-<p>
-  <strong>Error msg:</strong>
-  <%= @common_error.error_msg %>
-</p>
+    <div class="panel-footer">
+      <h4>Description:</h4>
+      <p><%= @common_error.description %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @common_error.description %>
-</p>
+      <%- disqus_thread %>
 
-<p>
-  <strong>Date:</strong>
-  <%= @common_error.date %>
-</p>
 
-<p>
-  <strong>Resolvedd:</strong>
-  <%= @common_error.resolvedd %>
-</p>
-
-<%= link_to 'Edit', edit_common_error_path(@common_error) %> |
-<%= link_to 'Back', common_errors_path %>
+    <p>
+    <%= link_to 'Edit', edit_common_error_path(@common_error) %> |
+    <%= link_to 'Back', common_errors_path %>
+    </p>
+  </div>
+</div>

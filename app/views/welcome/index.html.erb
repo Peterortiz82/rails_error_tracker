@@ -2,5 +2,8 @@
 
         <h1>Common errors in rails</h1>
         <p>Track and document all common errors you come across while working with Ruby on rails.</p>
+        <% if user_signed_in? %>
+        <%= link_to "New Common Error", new_common_error_path, class: "btn btn-primary btn-lg" %>
+        <% end %>
         
 </div>

@@ -1,5 +1,16 @@
 @import "bootstrap";
 
+.jumbotron  {
+  background-color: #fff;
+}
+
+.container {
+margin-right: auto;
+margin-left: auto;
+padding-left: 0px;
+padding-right: 0px;
+}
+
 .navbar-inverse {
   background-color: #981a21;
   border-color: #981A21;
@@ -12,9 +23,8 @@
 
 .navbar-inverse .navbar-nav > li > a {
 color: #FFFFFF;
+font-size: 1.1em;
 }
-
-
 
 a.navbar-brand:hover  {
   opacity: .8;
@@ -23,5 +33,48 @@ a.navbar-brand:hover  {
 .navbar-nav > li > a:hover  {
   opacity: .8;
 }
+
+.btn-primary {
+  color: #fff;
+  background-color: #981A21;
+  border-color: #8B1616;
+}
+
+.btn-primary:hover {
+  background-color: #981A21;
+  opacity: .9;
+}
+
+a.btn-primary:visited  {
+  color: #FFF;
+  border: none;
+}
+
+a.btn-btn-primary:visited {
+  color: #fff;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 175px;
+  padding: 3px;
+}
+
+.thumbnail {
+  border-radius: 0px;
+}
+
+.postby {
+  font-size: 11px;
+  color: rgb(179, 179, 179);
+}
+
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 10px;
+}
+
+
 
 

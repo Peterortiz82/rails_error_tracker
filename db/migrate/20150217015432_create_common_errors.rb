@@ -4,7 +4,7 @@ class CreateCommonErrors < ActiveRecord::Migration
       t.string :error_msg
       t.string :description
       t.date :date
-      t.boolean :resolvedd
+      t.boolean :resolved
 
       t.timestamps null: false
     end

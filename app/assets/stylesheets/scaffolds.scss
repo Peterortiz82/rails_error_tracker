@@ -1,5 +1,6 @@
 body {
-  background-color: #fff;
+  background: url(subtle_dots.png);
+  background-color: #EAEAEA;
   color: #333;
   font-family: arial, helvetica, sans-serif;
   font-size: 13px;
@@ -45,10 +46,10 @@ div {
   display: table;
 }
 
-textarea {
+textarea.form-control {
   margin: 0px;
-  height: 197px;
-  width: 374px;
+  height: 191px;
+  width: 1170px;
 }
 
 
