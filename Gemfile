@@ -13,6 +13,7 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'devise', '~> 3.4.1'
 gem "paperclip", "~> 4.2"
 gem 'disqus_rails'
+gem 'rails_12factor', group: :production
 
 
 group :development, :test do
