@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><h1><%= @common_error.error_msg %></h1></div>
+  <div class="panel-body">
+    <%= image_tag @common_error.image.url(:medium) %>
+  </div>
+
+    <div class="panel-footer">
+      <h4>Description:</h4>
+      <p><%= @common_error.description %></p>
+
+      <%- disqus_thread %>
+
+
+    <p>
+    <%= link_to 'Edit', edit_common_error_path(@common_error) %> |
+    <%= link_to 'Back', common_errors_path %>
+    </p>
+  </div>
+</div>

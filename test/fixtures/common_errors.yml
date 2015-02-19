@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  error_msg: MyString
+  description: MyString
+  date: 2015-02-16
+  resolvedd: false
+
+two:
+  error_msg: MyString
+  description: MyString
+  date: 2015-02-16
+  resolvedd: false
