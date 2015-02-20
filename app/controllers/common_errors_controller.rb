@@ -24,7 +24,7 @@ class CommonErrorsController < ApplicationController
   
   def create
     @common_error = CommonError.new(common_error_params)
-
+    @common_error.user_id = current_user.id
     respond_to do |format|
       if @common_error.save
         format.html { redirect_to @common_error, notice: 'Common error was successfully created.' }
@@ -68,6 +68,6 @@ class CommonErrorsController < ApplicationController
 
   
     def common_error_params
-      params.require(:common_error).permit(:image, :error_msg, :description, :date, :resolved)
+      params.require(:common_error).permit(:image, :error_msg, :description, :user_id)
     end
 end
