@@ -1,12 +1,25 @@
 @import "bootstrap";
 
-.panel-footer {
+ .panel-footer {
   background-color: #fff;
 }
 
 div.panel-heading h1 {
   margin-top: 0px;
   margin-bottom: 0px;
+}
+
+.panel-default {
+  border-color: #ddd;
+  margin-top: 40px;
+  border-radius: 0px;
+}
+
+.jumbotron .header {
+  font-size: 60px;
+  padding-bottom: 13px;
+  margin-left: -3px;
+  padding-top: 10px;
 }
 
 .container .jumbotron, .container-fluid .jumbotron {
@@ -52,8 +65,19 @@ a:hover, a:focus{
 }
 /*Navebar*/
 
+i.fa.fa-stack-overflow {
+  float: left;
+  padding-top: 5px;
+  margin-left: 80px;
+  font-size: 21px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f00), to(#E2E2E2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: initial; /* reset Font Awesome's display:inline-block */
+}
+
 .navbar .container-fluid .navbar-brand {
-  margin-left: 66px;
+  margin-left: -5px;
 }
 
 .navbar-right {
@@ -70,7 +94,6 @@ a:hover, a:focus{
 }
 
 .navbar-inverse .navbar-brand {
-  margin-left: 66px;
   float: left;
   padding: 15px 15px;
   font-size: 18px;
@@ -146,7 +169,8 @@ a.btn-btn-primary:visited {
 
 .postby {
   font-size: 11px;
-  color: rgb(179, 179, 179);
+  color: #5A5A5A;
+  margin: 0px;
 }
 
 .row {

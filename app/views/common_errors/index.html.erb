@@ -1,7 +1,7 @@
 <div class="jumbotron">
 
-    <h1>Common errors in rails</h1>
-    <p>Track and document all common errors you come across while working with Ruby on rails.</p>
+    <p class="header">rails<strong>overflow</strong></p>
+    <p>A list of all common errors you come across while working with Ruby on rails.</p>
 </div>
   
   
@@ -16,7 +16,7 @@
         <% @common_errors.each do |title| %>
     <div class="index-title">
         <h3><%= link_to title.error_msg, title %></h3>
-        <P class="postby">Posted <%= time_ago_in_words title.created_at %> ago </p>
+        <P class="postby">Posted by: <strong><%= link_to title.user.name, '#' if title.user %></strong> <%= time_ago_in_words title.created_at %> ago </p>
     </div>  
       <% end %>
 

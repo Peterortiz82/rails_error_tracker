@@ -4,5 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :common_errors
+  has_many :common_errors, dependent: :destroy
+
+  validates :name, presence: true
 end

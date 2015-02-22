@@ -1,6 +1,8 @@
 class CommonErrorsController < ApplicationController
   before_action :all_common_errors, only: [:index, :preview]
   before_action :set_common_error, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   
   
@@ -16,7 +18,7 @@ class CommonErrorsController < ApplicationController
 
  
   def new
-    @common_error = CommonError.new
+    @common_error = current_user.common_errors.build
   end
 
   
@@ -64,6 +66,11 @@ class CommonErrorsController < ApplicationController
   end
 
   private
+
+    def correct_user
+      @common_error = current_user.common_errors.find_by(params[:id])
+      redirect_to common_errors_path, notice: "Not authorized to edit this post" if @common_error.nil?
+    end
 
     def all_common_errors
       @common_errors = CommonError.all.order("created_at DESC")
