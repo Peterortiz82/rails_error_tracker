@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
-  resources :common_errors
-
+  resources :common_errors do
+  collection do
+    get 'preview'
+  end
+end
   devise_for :users
-  root 'welcome#index'  
-  get 'welcome/index'
+  
+  root 'common_errors#index'  
+  
 
 
   

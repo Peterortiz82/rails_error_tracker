@@ -1,22 +1,24 @@
+<div class="jumbotron">
 
-
-<% @common_errors.each do |common_error| %>
-<div class="container">
-<div class="row">
-  <div class="col-sm-2 col-md-3">
-    <div class="thumbnail">
-      <%= image_tag common_error.image.url(:thumb) %>
-      <div class="caption">
-        <P class="postby">Posted <%= time_ago_in_words common_error.created_at %> ago </p>
-        <h4><%= common_error.error_msg %></h4>
-        <p><%= common_error.description %></p>
-        <p><%= link_to 'View', common_error %> | <%= link_to 'Edit', edit_common_error_path(common_error) %> | <%= link_to 'Delete', common_error, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-      </div>
+    <h1>Common errors in rails</h1>
+    <p>Track and document all common errors you come across while working with Ruby on rails.</p>
+</div>
+  
+  
+    <div class="index-title">
+      <h3>New Errors
+        <% if user_signed_in? %>
+        <%= link_to 'Categories', '#', class: "btn btn-primary btn-md" %>
+        <%= link_to "Post new Error", new_common_error_path, class: "btn btn-primary btn-md" %></h3>
+      <% end %>
     </div>
-  </div>
-<% end %>
-</div>
 
-<%= link_to 'New Common error', new_common_error_path, class: "btn btn-primary" %>
-</div>
+        <% @common_errors.each do |title| %>
+    <div class="index-title">
+        <h3><%= link_to title.error_msg, title %></h3>
+        <P class="postby">Posted <%= time_ago_in_words title.created_at %> ago </p>
+    </div>  
+      <% end %>
+
+
 

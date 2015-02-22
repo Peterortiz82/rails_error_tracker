@@ -1,14 +1,17 @@
 class CommonErrorsController < ApplicationController
+  before_action :all_common_errors, only: [:index, :preview]
   before_action :set_common_error, only: [:show, :edit, :update, :destroy]
 
   
   
   def index
-    @common_errors = CommonError.all.order("created_at DESC")
   end
 
  
   def show
+  end
+
+  def preview
   end
 
  
@@ -61,6 +64,10 @@ class CommonErrorsController < ApplicationController
   end
 
   private
+
+    def all_common_errors
+      @common_errors = CommonError.all.order("created_at DESC")
+    end
   
     def set_common_error
       @common_error = CommonError.find(params[:id])
