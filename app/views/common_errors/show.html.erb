@@ -6,20 +6,35 @@
 
     <div class="panel-footer">
       <h4>Description:</h4>
-      <p><%= @common_error.description %></p><p class="postby">
-      Posted by: <strong><%= link_to @common_error.user.name, '#' if @common_error.user %></strong> <%= time_ago_in_words @common_error.created_at %> ago</p> 
-    <% if current_user && (@common_error.user == current_user) %>
+      
+      <p><%= @common_error.description %></p>
+      
+      <p class="postby">
+      Posted by: <strong><%= link_to @common_error.user.name, '#' if @common_error.user %></strong> <%= time_ago_in_words @common_error.created_at %> ago
+      </p> 
+      
+      <% if current_user && (@common_error.user == current_user) %>
+    
     <p>
-    <%= link_to 'Edit', edit_common_error_path(@common_error) %> |
+      <%= link_to 'Edit', edit_common_error_path(@common_error) %> |
     <% end %>
-    <%= link_to 'Back', common_errors_path %>
-    </p>
+      <%= link_to 'Back', common_errors_path %>
+    </p></br>
 
   </div>
-</div>
-
-
-  <% if user_signed_in? %>
-    <%= link_to 'Post new error', new_common_error_path, class: "btn btn-primary" %>
-  <% end %>
+  </div>
+    <div class="comments">
+      <h4>Your answer:</h4>
+    
+    <p>
+      <%= form_tag "/common_errors/add_new_comment" do %>
+      <%= hidden_field_tag "id", @common_error.id %>
+    </p>
+    
+    <p>
+      <%= text_area_tag "comment[comment]" %>
+    </p>
+      <%= submit_tag "Post Comment", class: "btn btn-primary btn-sm" %>
+    <% end %>
+  </div>
 </div>

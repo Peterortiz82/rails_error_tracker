@@ -3,6 +3,7 @@ class CommonErrorsController < ApplicationController
   before_action :set_common_error, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  impressionist :actions=>[:show]
 
   
   
@@ -11,6 +12,7 @@ class CommonErrorsController < ApplicationController
 
  
   def show
+   impressionist(@common_error) 
   end
 
   def preview
@@ -63,6 +65,15 @@ class CommonErrorsController < ApplicationController
       format.html { redirect_to common_errors_url, notice: 'Common error was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end  
+
+  def add_new_comment
+    commentable = CommonError.create
+    comment = commentable.comments.create
+    comment.title = "First comment."
+    comment.comment = "This is the first comment."
+    comment.save
+    redirect_to @common_error
   end
 
   private
@@ -82,6 +93,6 @@ class CommonErrorsController < ApplicationController
 
   
     def common_error_params
-      params.require(:common_error).permit(:image, :error_msg, :description, :user_id)
+      params.require(:common_error).permit(:image, :error_msg, :description, :user_id, :comment)
     end
 end

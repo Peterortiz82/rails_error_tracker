@@ -12,8 +12,16 @@
         <%= link_to "Post new Error", new_common_error_path, class: "btn btn-primary btn-md" %></h3>
       <% end %>
     </div>
-
+        
         <% @common_errors.each do |title| %>
+    <div class="count"> 
+        <% if title.impressionist_count < 2 %>
+          <%= pluralize(title.impressionist_count, "view") %>
+          </div>
+        <% else %>   
+          <p><%= title.impressionist_count%> views </p>
+    </div>
+        <% end %>  
     <div class="index-title">
         <h3><%= link_to title.error_msg, title %></h3>
         <P class="postby">Posted by: <strong><%= link_to title.user.name, '#' if title.user %></strong> <%= time_ago_in_words title.created_at %> ago </p>

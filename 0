@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20150222234646_add_impressions_count_to_common_error.rb
