@@ -8,6 +8,7 @@ class CommonErrorsController < ApplicationController
   
   
   def index
+    @common_errors = CommonError.paginate(page: params[:page], per_page: 12)
   end
 
  
@@ -67,15 +68,6 @@ class CommonErrorsController < ApplicationController
     end
   end  
 
-  def add_new_comment
-    commentable = CommonError.create
-    comment = commentable.comments.create
-    comment.title = "First comment."
-    comment.comment = "This is the first comment."
-    comment.save
-    redirect_to @common_error
-  end
-
   private
 
     def correct_user
@@ -93,6 +85,6 @@ class CommonErrorsController < ApplicationController
 
   
     def common_error_params
-      params.require(:common_error).permit(:image, :error_msg, :description, :user_id, :comment)
+      params.require(:common_error).permit(:image, :error_msg, :description, :user_id)
     end
 end

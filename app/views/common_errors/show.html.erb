@@ -23,18 +23,5 @@
 
   </div>
   </div>
-    <div class="comments">
-      <h4>Your answer:</h4>
     
-    <p>
-      <%= form_tag "/common_errors/add_new_comment" do %>
-      <%= hidden_field_tag "id", @common_error.id %>
-    </p>
-    
-    <p>
-      <%= text_area_tag "comment[comment]" %>
-    </p>
-      <%= submit_tag "Post Comment", class: "btn btn-primary btn-sm" %>
-    <% end %>
-  </div>
 </div>
