@@ -1,0 +1,16 @@
+.panel.panel-default
+  .panel-body
+    = image_tag @common_error.image.url(:medium)
+  .panel-footer
+    %h4 Description:
+    %p= @common_error.description
+    %p.postby
+      Posted by:
+      %strong= link_to @common_error.user.name, '#' if @common_error.user
+      = time_ago_in_words @common_error.created_at
+      ago
+    - if current_user && (@common_error.user == current_user)
+      %p
+        = link_to 'Edit', edit_common_error_path(@common_error)
+        |
+        = link_to 'Back', common_errors_path

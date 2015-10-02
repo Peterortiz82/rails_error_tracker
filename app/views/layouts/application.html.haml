@@ -1,0 +1,16 @@
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title RailsErrorTracker
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    %link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", :rel => "stylesheet"}/
+  %body
+    = render 'layouts/header'
+    .container
+      = yield
+    #footer
+      &copy; #{Date.today.year}  site created by
+      %a{:href => "https://twitter.com/peterortiz82", :target => "_blank"} Peter Ortiz

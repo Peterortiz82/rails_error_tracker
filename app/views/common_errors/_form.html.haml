@@ -1,0 +1,22 @@
+- if @common_error.errors.any?
+  #error_explanation
+    %h2
+      = pluralize(@common_error.errors.count, "error")
+      prohibited this common_error from being saved:
+    %ul
+      - @common_error.errors.full_messages.each do |message|
+        %li= message
+= form_for(@common_error) do |f|
+  .form-group
+    = f.label :error_msg, 'Error Message'
+    %br
+      = f.text_field :error_msg, class: "form-control"
+    %br
+      = f.label :description
+      = f.text_area :description, class: "form-control"
+    %fieldset
+      %legend Screenshot Upload
+      %p.small.comment Upload a Screenshot of your error message
+      = f.file_field :image
+    %br
+    = f.submit 'Submit', class: "btn btn-primary"

@@ -1,0 +1,20 @@
+- if @common_errors == nil
+  %h2 No errors have been posted at this time.
+- if @common_errors.exists?
+  #masonry-container
+    .row
+      - @common_errors.each do |common_error|
+        .col-sm-2.col-md-3
+          .thumbnail
+            = image_tag common_error.image.url(:thumb)
+            .caption
+              %p.postby
+                Posted #{time_ago_in_words common_error.created_at} ago
+              %h4= common_error.error_msg
+              %p= common_error.description
+              %p
+                = link_to 'View', common_error
+                - if current_user && (common_error.user == current_user)
+                  | #{link_to 'Edit', edit_common_error_path(common_error)}
+                  | #{link_to 'Delete', common_error, method: :delete, data: { confirm: 'Are you sure?' }}
+= link_to 'Post new error', new_common_error_path, class: "btn btn-primary"
