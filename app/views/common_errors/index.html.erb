@@ -1,34 +1,40 @@
 <div class="jumbotron">
 
-    <p class="header">rails<strong>overflow</strong></p>
-    <p>A list of all common errors you come across while working with Ruby on rails.</p>
+  <p class="header">rails<strong>overflow</strong></p>
+
+  <p>A list of all common errors you come across while working with Ruby on rails.</p>
 </div>
-  
-  
-    <div class="index-title">
-      <h3>New Errors
-        <% if user_signed_in? %>
+
+
+<div class="index-title">
+  <h3>New Errors
+    <% if user_signed_in? %>
         <%= link_to 'Categories', '#', class: "btn btn-primary btn-md" %>
         <%= link_to "Post new Error", new_common_error_path, class: "btn btn-primary btn-md" %></h3>
-      <% end %>
+    <% end %>
     </div>
-        <% @common_errors.each do |title| %>
-    <div class="count"> 
-        <% if title.impressionist_count < 2 %>
+
+<% @common_errors.each do |title| %>
+    <div class="count">
+      <% if title.impressionist_count < 2 %>
           <%= pluralize(title.impressionist_count, "view") %>
           </div>
-        <% else %>   
-          <p><%= title.impressionist_count%> views </p>
-    </div>
-        <% end %>  
-    <div class="index-title">
-        <h4><%= link_to title.error_msg, title %></h4>
-        <P class="postby">Posted by: <strong><%= link_to title.user.name, '#' if title.user %></strong> <%= time_ago_in_words title.created_at %> ago </p>
-    </div>  
+      <% else %>
+          <p><%= title.impressionist_count %> views </p>
+          </div>
       <% end %>
-    <div class="pagination">
-      <%= will_paginate @common_errors, renderer: BootstrapPagination::Rails%>
-    </div>
+      <div class="index-title">
+        <h4><%= link_to title.error_msg, title %></h4>
+
+        <P class="postby">Posted by:
+          <strong><%= link_to title.user.name, '#' if title.user %></strong> <%= time_ago_in_words title.created_at %>
+          ago </p>
+      </div>
+<% end %>
+
+<div class="pagination">
+  <%= will_paginate @common_errors, renderer: BootstrapPagination::Rails %>
+</div>
       
 
 

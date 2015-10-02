@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150224012908) do
+ActiveRecord::Schema.define(version: 20150224005738) do
 
   create_table "common_errors", force: :cascade do |t|
     t.string   "error_msg"
